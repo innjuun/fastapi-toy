@@ -34,6 +34,7 @@ def cpu_work():
 
 @app.post("/items/{item_id}")
 def update_item(item_id: int, item: Item):
+    redis_client.set(name=item_id, value=pickle.dumps(item))
     redis_cluster_client.set(name=item_id, value=pickle.dumps(item))
     return {"item_name": item.name, "item_id": item_id}
 
