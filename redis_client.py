@@ -1,9 +1,9 @@
 import redis
 from rediscluster import RedisCluster
 
-REDIS_ENDPOINT = "test.lkqmf4.ng.0001.apn2.cache.amazonaws.com:6379"
-REDIS_RO_ENDPOINT = "test-ro.lkqmf4.ng.0001.apn2.cache.amazonaws.com:6379"
-REDIS_CLUSTER_URL = "test-cluster.lkqmf4.clustercfg.apn2.cache.amazonaws.com:6379"
+REDIS_ENDPOINT = "test.lkqmf4.ng.0001.apn2.cache.amazonaws.com"
+REDIS_RO_ENDPOINT = "test-ro.lkqmf4.ng.0001.apn2.cache.amazonaws.com"
+REDIS_CLUSTER_URL = "test-cluster.lkqmf4.clustercfg.apn2.cache.amazonaws.com"
 
 redis_client = redis.Redis(host=REDIS_ENDPOINT, port=6379, db=0)
 
