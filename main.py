@@ -26,10 +26,15 @@ def read_item(item_id: int):
     response = pickle.loads(redis_client.get(item_id))
     return {"item": response}
 
+@app.get("/cpu-work")
+def cpu_work():
+    for x in range(1000000):
+        a = x*x*x*x
+    return {"work": "done"}
 
 @app.post("/items/{item_id}")
 def update_item(item_id: int, item: Item):
-    redis_client.set(name=item_id, value=pickle.dumps(item))
+    redis_client.set(name=item_id, value=pickle.dumps(item))z
     return {"item_name": item.name, "item_id": item_id}
 
 

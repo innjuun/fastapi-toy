@@ -1,7 +1,7 @@
 import redis
 
 
-redis_client = redis.Redis(host='localhost', port=6379, db=0)
+redis_client = redis.Redis(host='test-001.lkqmf4.0001.apn2.cache.amazonaws.com', port=6379, db=0)
 
 #
 # def redis_instance(read_only: bool = False) -> StrictRedis:
