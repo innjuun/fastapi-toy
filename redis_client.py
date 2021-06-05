@@ -1,8 +1,14 @@
 import redis
+from rediscluster import RedisCluster
 
 
 redis_client = redis.Redis(host='test-001.lkqmf4.0001.apn2.cache.amazonaws.com', port=6379, db=0)
-
+startup_nodes = [
+    {"host": "test-cluster-0001-001.lkqmf4.0001.apn2.cache.amazonaws.com", "port": "6379"},
+    {"host": "test-cluster-0002-001.lkqmf4.0001.apn2.cache.amazonaws.com", "port": "6379"},
+    {"host": "test-cluster-0003-001.lkqmf4.0001.apn2.cache.amazonaws.com", "port": "6379"},
+]
+redis_cluster_client = RedisCluster(startup_nodes=startup_nodes, decode_responses=True)
 #
 # def redis_instance(read_only: bool = False) -> StrictRedis:
 #     return _get_redis_instance(read_only)
