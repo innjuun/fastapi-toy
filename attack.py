@@ -1,16 +1,11 @@
-import os
-
 import aiohttp
 import asyncio
-
-import random
 
 
 async def attack_to_server():
     async with aiohttp.ClientSession() as session:
         for _ in range(1000):
-            # print(os.getpid())
-            num = random.randint(1, 1000000)
+            num = _
             body = {
                 "name": f"아이템{num}",
                 "price": num * 100,
